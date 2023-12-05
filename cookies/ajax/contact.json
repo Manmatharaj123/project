@@ -1,0 +1,22 @@
+{
+    "contacts": [
+        {
+            "name": "asaithambi perumal",
+            "dob": "19-05-1988",
+            "gender": "Male",
+            "mobile": "9972935543"
+        },
+        {
+            "name": "Mohamad Althaf",
+            "dob": "19-05-1988",
+            "gender": "Male",
+            "mobile": "9972935543"
+        },
+        {
+            "name": "David Jhons",
+            "dob": "19-05-1988",
+            "gender": "Male",
+            "mobile": "9972935543"
+        }
+    ]
+}

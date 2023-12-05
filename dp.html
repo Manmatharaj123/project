@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #userList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #userList li {
+            margin: 5px;
+        }
+
+        #showPromptButton {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="showPromptButton">Show Prompt</button>
+
+    <ul id="userList"></ul>
+
+    <script>
+        var showPromptButton = document.getElementById('showPromptButton');
+        var userList = document.getElementById('userList');
+
+        showPromptButton.addEventListener('click', function () {
+            var userInput = prompt('Enter text:');
+            if (userInput !== null && userInput !== '') {
+                appendUserInputToList(userInput);
+            }
+        });
+
+        function appendUserInputToList(text) {
+            var listItem = document.createElement('li');
+            listItem.textContent = text;
+            userList.appendChild(listItem);
+        }
+    </script>
+
+</body>
+
+</html>

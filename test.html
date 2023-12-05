@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        /* .popup-content {
+            text-align: center;
+        } */
+
+        .Cancel {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="showpopup()">show popup</button>
+    <div class='popup'>
+        <p>this is a popup</p>
+        <button class="Cancel" onclick="hidepopup()">Cancel</button>
+    </div>
+    <script>
+        var popup = document.getElementsByClassName('popup')[0];
+        function showpopup() {
+            popup.style.display = 'block';
+            document.addEventListener('keydown', close);
+        }
+        function close(press) {
+            if (press.key === 'Escape') {
+                hidepopup();
+            }
+        }
+        function hidepopup() {
+            popup.style.display = 'none';
+            document.removeEventListener('keydown', close);
+        }
+    </script>
+
+</body>
+
+</html>

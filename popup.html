@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .popup-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .popup-content {
+            text-align: center;
+        }
+
+        .popup-button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="showPopupButton">Show Popup</button>
+
+    <div id="popup" class="popup-container">
+        <div class="popup-content">
+            <p>This is a popup message!</p>
+            <button id="cancelButton" class="popup-button">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        var showPopupButton = document.getElementById('showPopupButton');
+        var popup = document.getElementById('popup');
+        var cancelButton = document.getElementById('cancelButton');
+
+        showPopupButton.addEventListener('click', function () {
+            popup.style.display = 'block';
+        });
+
+        cancelButton.addEventListener('click', function () {
+            popup.style.display = 'none';
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                popup.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="one()">add cookies</button>
+    <p id="demo"></p>
+
+    <script>
+        function one() {
+            var cookies = prompt("enter the key");
+            var cook = prompt("enter the value");
+            document.cookie = cookies + "=" + cook;
+            document.getElementById("demo").innerText = document.cookie;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Details</title>
+</head>
+
+<body>
+
+    <script>
+        // Array of persons with details
+        var persons = [
+            {
+                firstName: "John",
+                lastName: "Doe",
+                email: "john.doe@example.com",
+                mobileNumber: "1234567890",
+                dob: "1990-01-01",
+                address: {
+                    flatNumber: "123",
+                    street: "Main Street",
+                    village: "Village1",
+                    city: "City1",
+                    pinCode: "123455"
+                }
+            }
+            // Add more persons as needed
+        ];
+
+        // Display person details in  HTML
+        var output = "<table border='1'><tr><th>First Name</th><th>Last Name</th><th>Email</th><th>Mobile Number</th><th>DOB</th><th>Address</th></tr>";
+
+        for (var i = 0; i < persons.length; i++) {
+            output += "<tr>";
+            output += "<td>" + persons[i].firstName + "</td>";
+            output += "<td>" + persons[i].lastName + "</td>";
+            output += "<td>" + persons[i].email + "</td>";
+            output += "<td>" + persons[i].mobileNumber + "</td>";
+            output += "<td>" + persons[i].dob + "</td>";
+            output += "<td>" + "Flat: " + persons[i].address.flatNumber + ", Street: " + persons[i].address.street + ", Village: " + persons[i].address.village + ", City: " + persons[i].address.city + ", Pin Code: " + persons[i].address.pinCode + "</td>";
+            output += "</tr>";
+        }
+
+        output += "</table>";
+
+        document.body.innerHTML = output;
+    </script>
+
+</body>
+
+</html>

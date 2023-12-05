@@ -1,0 +1,13 @@
+git space version to check git variable
+git status-to check respository available or not
+git clone- (ssh,url) cloning respository locally from githup
+git clone space .-files is same branch
+git add space.-commit for all files
+git restore-- staged for restore or unstaged
+git commit-m " message send the git"
+git push- push to the romote
+git pull- git merge and fetch
+git log- ti see log
+git branch-check the current branch
+git checkout-b branchname/filename-create branch and switch to current branch
+git push  setup stream orgin branchname- to push branch to romote

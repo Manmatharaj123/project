@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>clickcounter</h1>
+    <button id="button1">clickMe</button>
+    <p id="button2">clickCount: 0</p>
+    <script>
+        var button1 = document.getElementById('button1');
+        var button2 = document.getElementById('button2');
+
+        var clickCount = 0;
+
+        button1.addEventListener('click', function () {
+            clickCount++;
+            button2.textContent = 'Click count: ' + clickCount;
+        });
+    </script>
+</body>
+
+</html>

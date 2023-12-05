@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #popup {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        display: none;
+      }
+      .popup-inner {
+        margin: 50px auto 0;
+        width: 300px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        background: #ccc;
+      }
+      .close-btn {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Array Example</p>
+    <button id="btn-popup">Show popup</button>
+    <div id="popup">
+      <div class="popup-inner">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint,
+          placeat excepturi facere unde autem dolores architecto dignissimos.
+          Tempora recusandae hic pariatur similique voluptatum. Perferendis eos
+          repudiandae numquam aperiam pariatur illo.
+        </p>
+        <div class="close-btn">
+          <button>Close</button>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

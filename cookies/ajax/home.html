@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Example</title>
+</head>
+
+<body>
+
+    <button onclick="call()">get text file datas</button>
+    <div id="mes">
+        Hello world
+    </div>
+    <div id="index">
+
+    </div>
+    <script>
+        let clickCount = 0;
+        function call() {
+            if (clickCount === 0) {
+                loaddata();
+            }
+            if (clickCount === 1) {
+                load();
+            }
+            clickCount++;
+        }
+        function loaddata() {
+            var a = new XMLHttpRequest();
+            a.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("mes").innerHTML = this.responseText;
+                }
+            };
+            a.open("get", "home.txt", true);
+            a.send();
+        }
+
+        function load() {
+            var a = new XMLHttpRequest();
+            a.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    const contactData = JSON.parse(this.responseText);
+                    console.log(contactData);
+                    let outputHtml = '';
+                    if (contactData && contactData.contacts) {
+                        contactData.contacts.forEach(contactRow => {
+                            outputHtml += `<div>${contactRow.name},${contactRow.dob},${contactRow.gender}</div>`;
+                        });
+                    }
+
+                    document.getElementById("index").innerHTML = outputHtml;
+                }
+            };
+            a.open("get", "contact.json", true);
+            a.send();
+        }
+    </script>
+</body>
+
+</html>

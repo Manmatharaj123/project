@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button {
+        background-color: aqua;
+        color: red;
+        border-radius: 10px;
+    }
+
+    #btn {
+        border: 1px;
+    }
+</style>
+
+<body>
+    <button id="bttn">shpwprompt</button>
+    <ul id="btn"></ul>
+    <script>
+        var show = document.getElementById('bttn');
+        var btn = document.getElementById('btn');
+
+        show.addEventListener('click', function () {
+            var user = prompt('Enter name');
+            if (user !== null && user !== '') {
+                events(user);
+            }
+        });
+        function events(text) {
+            var list = document.createElement('li');
+            list.textContent = text;
+            btn.appendChild(list);
+        }
+    </script>
+</body>
+
+</html>
